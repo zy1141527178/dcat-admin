@@ -72,7 +72,7 @@ class Sorter implements Renderable
     public function render()
     {
         $type = 'desc';
-        $icon = 'down';
+        $icon = 'up';
         $active = '';
 
         if ($this->isSorted()) {
@@ -80,7 +80,7 @@ class Sorter implements Renderable
             $active = 'active';
 
             if ($this->sort['type'] === 'asc') {
-                $icon = 'up';
+                $icon = 'down';
             }
         }
 

@@ -36,20 +36,6 @@ class DialogTable extends Widget
     protected $footer;
 
     /**
-     * show max or min.
-     *
-     * @var bool
-     */
-    protected $maxmin = true;
-
-    /**
-     * resize setting.
-     *
-     * @var bool
-     */
-    protected $resize = true;
-
-    /**
      * @var array
      */
     protected $events = ['shown' => null, 'hidden' => null, 'load' => null];
@@ -112,32 +98,6 @@ class DialogTable extends Widget
     public function width($width)
     {
         $this->width = $width;
-
-        return $this;
-    }
-
-    /**
-     * show max or min.
-     *
-     * @param  bool  $maxmin
-     * @return $this
-     */
-    public function maxmin(bool $maxmin)
-    {
-        $this->maxmin = $maxmin;
-
-        return $this;
-    }
-
-    /**
-     * resize setting.
-     *
-     * @param  bool  $resize
-     * @return $this
-     */
-    public function resize(bool $resize)
-    {
-        $this->resize = $resize;
 
         return $this;
     }
@@ -224,8 +184,6 @@ class DialogTable extends Widget
             'table'  => $this->renderTable(),
             'footer' => $this->renderFooter(),
             'events' => $this->events,
-            'maxmin' => $this->maxmin,
-            'resize' => $this->resize,
         ]);
 
         return parent::render();

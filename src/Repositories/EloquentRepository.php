@@ -20,7 +20,6 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use ReflectionMethod;
 use Spatie\EloquentSortable\Sortable;
 
 class EloquentRepository extends Repository implements TreeRepository
@@ -783,7 +782,7 @@ class EloquentRepository extends Repository implements TreeRepository
                 $relationColumn = $camelColumn;
             }
 
-            if (! $relationColumn || ! (new ReflectionMethod($model, $relationColumn))->isPublic()) {
+            if (! $relationColumn) {
                 continue;
             }
 
